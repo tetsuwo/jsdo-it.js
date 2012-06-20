@@ -1,12 +1,12 @@
 ### initialize
 
-    var doit = new JsdoItAPIv02();
+    var doit = new JsdoIt();
 
 
 ### get the user codes
 
-    doit.api('/user/codes', [ 'name=tetsuwo' ], function(res) {
+    doit.api('/user/codes', {name: 'tetsuwo'}, function(response) {
         alert('callback [/user/codes]');
-        console.log(res);
+        console.log(response);
     });
 
