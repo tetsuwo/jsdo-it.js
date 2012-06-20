@@ -1,5 +1,5 @@
 /*!
- * Tumblr2 - JavaScript SDK for Tumblr API v2
+ * JsdoIt - JavaScript SDK for jsdo.it API v0.2
  *
  * Copyright 2011-2012, Tetsuwo OISHI.
  * Dual license under the MIT license.
@@ -42,7 +42,7 @@ JsdoIt.prototype = {
         this.win[callbackName] = callback;
 
         param = param || [];
-        param.push('callback=' + callbackName);
+        param.callback = callbackName;
 
         this.requests[this.times] = {
             method: method,
@@ -82,11 +82,3 @@ JsdoIt.prototype.serialize = function(param, prefix) {
 
     return query.join('&');
 };
-
-
-var jsdoit = new JsdoIt();
-
-jsdoit.api('/user/codes', {name: tetsuwo}, function(res) {
-    alert('run [/user/codes]');
-    console.log(res);
-});
