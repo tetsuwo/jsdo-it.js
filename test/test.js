@@ -5,10 +5,17 @@ describe('JsdoIt', function() {
     };
 
     it('default', function() {
-        var tumblr = new JsdoIt();
-        expect(tumblr.debug).toBeFalsy();
-        expect(tumblr.config.apiKey).toBeNull();
-        expect(tumblr.config.baseHostname).toBeNull();
+        var doit = new JsdoIt();
+        doit.api('/user/codes', {name: 'tetsuwo'}, function(response) {
+            console.log(response);
+        });
+    });
+
+    it('default', function() {
+        var doit = new JsdoIt();
+        doit.api('/user/codes', {name: 'tetsuwo'}, function(response) {
+            console.log(response);
+        });
     });
 
 });
